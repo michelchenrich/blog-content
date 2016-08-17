@@ -1,0 +1,8 @@
+{
+  "name": "michelhenrich-blog-content",
+  "buildpacks": [
+    {
+      "url": "https://github.com/heroku/heroku-buildpack-static"
+    }
+  ]
+}
