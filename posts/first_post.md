@@ -16,7 +16,31 @@ And below we can see how tables are presented:
 
 First Header | Second Header
 -------------|--------------
-Row 1 Cell 1 | Row 1 Cell 2
+Row 1 Cell 1 | Row 1 Cell 2 and some text
 Row 2 Cell 1 | Row 2 Cell 2
+
+> Block quote
+
+> *Italic block quote*
+
+> > Double block quote, **and in bold**
+
+Now some lists:
+
+1. These
+2. are
+3. ordered items
+  * But these
+  * are just plain old
+  * bullet points
+
+* More bullet points
+* but at top level
+  * and sub-level too
+
+> Block quote with
+> * Bullet points
+>   * that have many sub-leves
+>     * with code `snippets`
 
 So, what do you think?
