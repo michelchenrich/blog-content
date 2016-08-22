@@ -39,6 +39,6 @@ Now some lists:
   * and sub-level too
   * and code `snippets`
 
-![Clean Architecture](/resource/clean-architecture.png)
+![Clean Architecture](/resource/clean-architecture.jpg)
 
 So, what do you think?
