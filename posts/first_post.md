@@ -39,4 +39,6 @@ Now some lists:
   * and sub-level too
   * and code `snippets`
 
+![Clean Architecture](/resource/clean-architecture.png)
+
 So, what do you think?
