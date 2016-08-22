@@ -37,10 +37,6 @@ Now some lists:
 * More bullet points
 * but at top level
   * and sub-level too
-
-> Block quote with
-> * Bullet points
->   * that have many sub-leves
->     * with code `snippets`
+  * and code `snippets`
 
 So, what do you think?
