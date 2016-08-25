@@ -29,12 +29,12 @@ But let's do exactly that - how would this code change if it was necessary to su
 For instance, lets suppose the current `log` function simply writes to standard output. 
 Now we want to send these messages through a socket, to a specific listener.
 In essence, now the logging functionality has the following tasks:
-* Determine which kind of logging has to be done (standard output or socket)
-* Write to standard output when it is the case;
-* Write to the socket when it is the case, which involves:
-  * Connecting to the listener, from an adress and port;
-  * Writing to the socket when the connection was successful;
-  * Writing an error to standard ouput when no connection could be made.
+*  Determine which kind of logging has to be done (standard output or socket)
+*  Write to standard output when it is the case;
+*  Write to the socket when it is the case, which involves:
+  *  Connecting to the listener, from an adress and port;
+  *  Writing to the socket when the connection was successful;
+  *  Writing an error to standard ouput when no connection could be made.
 
 To support these new tasks, we can split the `log` function in two, `local-log` and `remote-log`.
 `local-log` is just the old `log` function, writing to standard output, while `remote-log` is the new one which writes over to a socket.
@@ -55,8 +55,8 @@ We now have a line to determine which `log` function to use, based on an argumen
 
 But oh, crap, this doesn't work yet. When we need to use the `remote-log`, we need to pass `host` and `port` arguments for the connection.
 Ok, to solve this, we can re-introduce the `log` function and think of a structure to receive the input data for both local and remote logging modes. The structure would have one of the following formats:
-* `{:type :local }`
-* `{:type :remote, :host "localhost", :port 3333}`
+*  `{:type :local }`
+*  `{:type :remote, :host "localhost", :port 3333}`
 
 So now the `log` function can simply query the `:type` field and delegate to the specialist functions, such as `remote-log`, passing the remaining arguments individually, like this:
 ```clojure
@@ -83,11 +83,5 @@ But there is still a problem. We want the application to work the same way with 
 In other words, we want to be able to build one application using standard output logging, and another with the socket-based logging. With the current solution we have, the code for deciding which kind of log to use would be executed for every log entry, while such a decision should be made in some kind of "assembler" code.
 
 Well, the above description may make it sound farfetched, but this simply means we want the logging behavior to be a plug-in to our application.
-
-So how can we do that? Well, first let's see how the application would be started, considering the code examples from before:
-```clojure
-(ns retirement-core
-  (:require
-```
 
 -- To be continued... --
