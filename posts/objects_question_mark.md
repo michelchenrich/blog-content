@@ -12,7 +12,7 @@ to make sure we understand the resons and the decision tree behind the final res
 Since logging is such a *[cross-cutting concern](https://en.wikipedia.org/wiki/Cross-cutting_concern)*, 
 it is usually unavoidable that the calculation functions will also be responsible for logging.
 So, just to illustrate, in this system we would find functions like this one:
-```clojure
+```Clojure
 (defn is-eligible? [citizen]
   (log (str "Eligibility check for " (:name citizen)))
   (let [eligible (>= (age citizen) 65)]
